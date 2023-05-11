@@ -1,7 +1,6 @@
 package com.devdamascena.dslist.dto;
 
 import com.devdamascena.dslist.entities.Game;
-import jakarta.persistence.Column;
 
 public class GameMinDto {
 
@@ -24,22 +23,27 @@ public class GameMinDto {
     }
     
     public long getId() {
+
         return id;
     }
 
     public String getTitle() {
+
         return title;
     }
 
     public Integer getYear() {
+
         return year;
     }
 
     public String getImgUrl() {
+
         return imgUrl;
     }
 
     public String getShortDescription() {
+
         return shortDescription;
     }
 }
