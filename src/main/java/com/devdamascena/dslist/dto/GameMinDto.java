@@ -1,6 +1,7 @@
 package com.devdamascena.dslist.dto;
 
 import com.devdamascena.dslist.entities.Game;
+import com.devdamascena.dslist.projections.GameMinProjection;
 
 public class GameMinDto {
 
@@ -21,7 +22,15 @@ public class GameMinDto {
         imgUrl = entity.getImgUrl();
         shortDescription = entity.getShortDescription();
     }
-    
+
+    public GameMinDto(GameMinProjection projection) {
+        id = projection.getId();
+        title = projection.getTitle();
+        year = projection.getYear();
+        imgUrl = projection.getImgUrl();
+        shortDescription = projection.getShortDescription();
+    }
+
     public long getId() {
 
         return id;

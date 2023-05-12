@@ -3,6 +3,7 @@ package com.devdamascena.dslist.services;
 import com.devdamascena.dslist.dto.GameDto;
 import com.devdamascena.dslist.dto.GameMinDto;
 import com.devdamascena.dslist.entities.Game;
+import com.devdamascena.dslist.projections.GameMinProjection;
 import com.devdamascena.dslist.repositories.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,4 +31,13 @@ public class GameService {
         return dto;
 
     }
+
+    @Transactional(readOnly = true)
+    public List<GameMinDto> findBylist(Long listId) {
+        List<GameMinProjection> result = gameRepository.searchByList(listId);
+        List<GameMinDto> dto = result.stream().map(x -> new GameMinDto(x)).toList();
+        return dto;
+
+    }
+
 }
