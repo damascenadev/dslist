@@ -5,7 +5,7 @@ import com.devdamascena.dslist.projections.GameMinProjection;
 
 public class GameMinDto {
 
-    private long id;
+    private Long id;
     private String title;
     private Integer year;
     private String imgUrl;
